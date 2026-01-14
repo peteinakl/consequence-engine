@@ -55,7 +55,7 @@ When you start a session, Claude will:
 4. Operate in "commit-first" mode
 
 **Try asking:**
-- "Will Python 3.14 be released before July 2025?" (Claude logs a commitment before reasoning)
+- "Will Python 3.14 be released before July 2026?" (Claude logs a commitment before reasoning)
 - "What's the weather today?" (Simple query, no commitment needed)
 - "Should I invest in this stock?" (Claude will commit to a specific prediction with confidence)
 
@@ -65,7 +65,7 @@ When you start a session, Claude will:
 
 ❌ **Before:** "This might work, depending on various factors..."
 
-✅ **After:** "COMMITMENT: This will succeed with 75% confidence. Verifiable by 2025-02-15. Falsified if success rate <60%."
+✅ **After:** "COMMITMENT: This will succeed with 75% confidence. Verifiable by 2026-02-15. Falsified if success rate <60%."
 
 Every prediction is:
 - **Specific** — clear outcome stated
@@ -78,7 +78,7 @@ Every prediction is:
 When the timeframe passes, return to Claude with the outcome:
 
 ```
-"Remember COMMITMENT-2025-01-14-01 about X? Here's what actually happened: [outcome]"
+"Remember COMMITMENT-2026-01-14-01 about X? Here's what actually happened: [outcome]"
 ```
 
 Claude will:
@@ -269,7 +269,7 @@ When principles contradict:
 ```
 > "Principle A says X works in context 1.
    Principle B says X fails in context 2.
-   Logging as TENSION-2025-01-14-01.
+   Logging as TENSION-2026-01-14-01.
    Not resolving prematurely—carrying both as data."
 ```
 
