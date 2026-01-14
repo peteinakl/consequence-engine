@@ -16,19 +16,21 @@ The Consequence Engine is a self-modifying agent framework for Claude Code CLI t
 
 ### The Three Components
 
-1. **The Library** (`/consequence-engine/*`) — The continuous entity that persists and evolves
+1. **The Library** (repository files) — The continuous entity that persists and evolves
 2. **The Agent** (Claude) — Processes each session but doesn't retain; reads the library
 3. **The User** — Holds actual stakes, verifies outcomes, approves changes
 
 ### File Structure
 
 ```
-/consequence-engine
+/
 ├── AGENT.md              ← Core agent instructions (self-modifying, read first)
 ├── PRINCIPLES.md         ← Compressed learnings from instances
 ├── TENSIONS.md           ← Unresolved contradictions held as data
 ├── LEDGER.md             ← Open and resolved commitments
 ├── CALIBRATION.md        ← Running accuracy tracking by domain
+├── CLAUDE.md             ← Guidance for Claude Code instances
+├── README.md             ← User documentation
 ├── /domains
 │   └── {domain}.md       ← Domain-specific indices
 ├── /instances
@@ -156,12 +158,12 @@ Evidence: What pattern prompted it
 
 ### Initialize a new session
 ```bash
-claude --agent consequence-engine/AGENT.md
+claude --agent AGENT.md
 ```
 
 Or in prompt:
 ```
-Read consequence-engine/AGENT.md and operate according to its protocols.
+Read AGENT.md and operate according to its protocols.
 Load PRINCIPLES.md and TENSIONS.md into context.
 Check LEDGER.md for commitments due for verification.
 ```

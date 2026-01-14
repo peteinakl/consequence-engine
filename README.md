@@ -36,13 +36,12 @@ cd consequence-engine
 Start Claude Code with the agent framework:
 
 ```bash
-cd consequence-engine
 claude --agent AGENT.md
 ```
 
 Or reference it manually in your Claude Code session:
 ```
-Read consequence-engine/AGENT.md and operate according to its protocols.
+Read AGENT.md and operate according to its protocols.
 Load PRINCIPLES.md and TENSIONS.md into context.
 Check LEDGER.md for commitments due for verification.
 ```
@@ -122,19 +121,19 @@ The framework improves through:
 
 ```bash
 # Session 1: Make predictions
-$ claude --agent consequence-engine/AGENT.md
+$ claude --agent AGENT.md
 > "Will the new feature launch by end of month?"
 
 Claude logs commitment: 80% confident, verifiable by 2026-01-31
 
-# Session 2: Verify outcome (after 2025-01-31)
-$ claude --agent consequence-engine/AGENT.md
+# Session 2: Verify outcome (after 2026-01-31)
+$ claude --agent AGENT.md
 > "The feature launched on 2026-01-28. Update the commitment."
 
 Claude marks VERIFIED, updates calibration
 
 # Session 3: Extract learning
-$ claude --agent consequence-engine/AGENT.md
+$ claude --agent AGENT.md
 > "We have 15 feature-launch predictions. What have you learned?"
 
 Claude proposes principle, you approve, it gets committed to git
@@ -169,13 +168,14 @@ Claude proposes principle, you approve, it gets committed to git
 ## File Structure
 
 ```
-/consequence-engine
+/
 ├── README.md             ← You are here
 ├── AGENT.md              ← Core agent instructions (self-modifying)
 ├── PRINCIPLES.md         ← Active compressed principles
 ├── TENSIONS.md           ← Unresolved contradictions
 ├── LEDGER.md             ← Open and resolved commitments
 ├── CALIBRATION.md        ← Running accuracy by domain
+├── CLAUDE.md             ← Guidance for Claude Code instances
 ├── /domains
 │   └── _TEMPLATE.md      ← Template for new domains
 ├── /instances
@@ -242,10 +242,10 @@ Create a new domain when a category of predictions emerges:
 
 ```bash
 # Copy template
-cp consequence-engine/domains/_TEMPLATE.md consequence-engine/domains/market-analysis.md
+cp domains/_TEMPLATE.md domains/market-analysis.md
 
 # Edit metadata and commit
-git add consequence-engine/domains/market-analysis.md
+git add domains/market-analysis.md
 git commit -m "[DOMAIN] Add market-analysis domain"
 ```
 
