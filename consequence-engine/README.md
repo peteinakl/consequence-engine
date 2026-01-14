@@ -125,11 +125,11 @@ The framework improves through:
 $ claude --agent consequence-engine/AGENT.md
 > "Will the new feature launch by end of month?"
 
-Claude logs commitment: 80% confident, verifiable by 2025-01-31
+Claude logs commitment: 80% confident, verifiable by 2026-01-31
 
 # Session 2: Verify outcome (after 2025-01-31)
 $ claude --agent consequence-engine/AGENT.md
-> "The feature launched on 2025-01-28. Update the commitment."
+> "The feature launched on 2026-01-28. Update the commitment."
 
 Claude marks VERIFIED, updates calibration
 
