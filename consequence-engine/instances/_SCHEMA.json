@@ -1,0 +1,127 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Consequence Engine Instance Log",
+  "description": "Raw instance data for a single domain",
+  "type": "object",
+  "properties": {
+    "domain": {
+      "type": "string",
+      "description": "Domain identifier"
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "instanceCount": {
+      "type": "integer"
+    },
+    "instances": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "claim", "confidence", "timeframe", "falsifiedBy", "status", "logged"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^COMMITMENT-\\d{4}-\\d{2}-\\d{2}-\\d+$"
+          },
+          "claim": {
+            "type": "string",
+            "description": "Specific, falsifiable statement"
+          },
+          "confidence": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "Confidence percentage"
+          },
+          "timeframe": {
+            "type": "string",
+            "description": "When verifiable (date or condition)"
+          },
+          "falsifiedBy": {
+            "type": "string",
+            "description": "What outcome would prove this wrong"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["OPEN", "VERIFIED", "FALSIFIED", "PARTIAL", "CONTESTED"]
+          },
+          "logged": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resolved": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When outcome was recorded (if resolved)"
+          },
+          "actualResult": {
+            "type": "string",
+            "description": "What actually happened (if resolved)"
+          },
+          "whatWasMissed": {
+            "type": "string",
+            "description": "Explicit error accounting (if falsified)"
+          },
+          "errorType": {
+            "type": "string",
+            "enum": ["within-frame", "frame-problem", "information-gap", "reasoning-failure"],
+            "description": "Category of error (if falsified)"
+          },
+          "specificityScore": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5,
+            "description": "How actionable was this claim (1-5)"
+          },
+          "anomaly": {
+            "type": "boolean",
+            "default": false,
+            "description": "Flagged as not fitting domain frame"
+          },
+          "anomalyNotes": {
+            "type": "string",
+            "description": "Why this was flagged as anomalous"
+          },
+          "usedInCompression": {
+            "type": "boolean",
+            "default": false,
+            "description": "Has this instance been processed in a compression cycle"
+          },
+          "contributedToPrinciple": {
+            "type": "string",
+            "description": "Principle ID this instance contributed to (if any)"
+          },
+          "context": {
+            "type": "string",
+            "description": "Relevant context at time of commitment"
+          },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Optional tags for filtering/analysis"
+          }
+        }
+      }
+    },
+    "compressionCycles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "cycle": { "type": "integer" },
+          "date": { "type": "string", "format": "date-time" },
+          "instancesProcessed": { "type": "integer" },
+          "principleGenerated": { "type": "string" },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  },
+  "required": ["domain", "created", "instances"]
+}
