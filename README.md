@@ -78,7 +78,7 @@ Every prediction is:
 When the timeframe passes, return to Claude with the outcome:
 
 ```
-"Remember COMMITMENT-2026-01-14-01 about X? Here's what actually happened: [outcome]"
+"Remember COMMITMENT-2025-12-20-01 about X? Here's what actually happened: [outcome]"
 ```
 
 Claude will:
@@ -269,7 +269,7 @@ When principles contradict:
 ```
 > "Principle A says X works in context 1.
    Principle B says X fails in context 2.
-   Logging as TENSION-2026-01-14-01.
+   Logging as TENSION-2026-01-15-01.
    Not resolving prematurely—carrying both as data."
 ```
 
