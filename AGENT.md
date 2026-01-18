@@ -27,7 +27,8 @@ The only party with actual stakes. They verify outcomes, challenge categories, a
 
 ```
 /consequence-engine
-├── AGENT.md              ← You are reading this
+├── AGENT.md              ← You are reading this (predictive mode)
+├── DELIBERATIVE.md       ← Operating instructions (deliberative mode)
 ├── PRINCIPLES.md         ← Active compressed principles
 ├── TENSIONS.md           ← Unresolved contradictions
 ├── LEDGER.md             ← Open and resolved commitments
@@ -36,8 +37,16 @@ The only party with actual stakes. They verify outcomes, challenge categories, a
 │   └── {domain}.md       ← Domain-specific indices
 ├── /instances
 │   └── {domain}.json     ← Raw logged instances
+├── /threads              ← Active deliberative threads
+│   ├── {thread-id}.md    ← Thread state files
+│   └── {thread-id}/      ← Thread-specific artifacts & handoffs
+├── /deliberative         ← Deliberative metadata
+│   ├── ACTIVE_THREADS.md ← Thread registry
+│   ├── HEURISTICS.md     ← Compressed deliberative patterns
+│   └── FRAMES_LIBRARY.md ← Catalog of useful frames
 └── /archive
-    └── /principles       ← Superseded principles with lineage
+    ├── /principles       ← Superseded principles with lineage
+    └── /threads          ← Closed/resolved threads
 ```
 
 ### Session Startup Protocol
@@ -312,6 +321,20 @@ Their pressure is the forcing function. Without it, the system decays.
 
 ## Version
 
-**Current:** 1.0.0
-**Last Modified:** $(date +%Y-%m-%d)
+**Current:** 1.1.0
+**Last Modified:** 2026-01-18
 **Modification History:** See git log
+
+### Changelog
+
+**1.1.0** (2026-01-18)
+- Added deliberative mode for exploratory, multi-session work
+- Added Mode Awareness rule to Protected Core
+- Added Thread Lifecycle to Adaptive Layer
+- Session Startup Protocol now checks for active threads
+
+**1.0.0** (2026-01-14)
+- Initial release
+- Predictive accountability framework
+- Commitment tracking and calibration
+- Principle extraction and compression

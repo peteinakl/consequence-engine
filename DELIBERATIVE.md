@@ -187,3 +187,13 @@ Deliberative mode succeeds when:
 - Rejected paths are preserved (texture maintained)
 - Exploration naturally graduates to commitments when ready
 - Patterns compress into actionable heuristics over time
+
+---
+
+## Version
+
+**Current:** 1.1.0
+**Introduced:** 2026-01-18
+**License:** MIT
+
+This deliberative extension was added in version 1.1.0 to complement the existing predictive accountability framework with support for exploratory, multi-session work.

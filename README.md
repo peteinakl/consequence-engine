@@ -207,7 +207,8 @@ See **DELIBERATIVE.md** for complete operating instructions.
 ```
 /
 ├── README.md             ← You are here
-├── AGENT.md              ← Core agent instructions (self-modifying)
+├── AGENT.md              ← Core agent instructions (predictive mode)
+├── DELIBERATIVE.md       ← Operating instructions (deliberative mode)
 ├── PRINCIPLES.md         ← Active compressed principles
 ├── TENSIONS.md           ← Unresolved contradictions
 ├── LEDGER.md             ← Open and resolved commitments
@@ -217,8 +218,17 @@ See **DELIBERATIVE.md** for complete operating instructions.
 │   └── _TEMPLATE.md      ← Template for new domains
 ├── /instances
 │   └── _SCHEMA.json      ← JSON schema for instance files
+├── /threads              ← Active deliberative threads
+│   ├── _TEMPLATE.md      ← Template for thread state
+│   ├── _HANDOFF_TEMPLATE.md ← Template for handoffs
+│   └── {thread-id}/      ← Individual threads
+├── /deliberative         ← Deliberative metadata
+│   ├── ACTIVE_THREADS.md ← Thread registry
+│   ├── HEURISTICS.md     ← Compressed deliberative patterns
+│   └── FRAMES_LIBRARY.md ← Catalog of useful frames
 └── /archive
-    └── /principles       ← Superseded principles
+    ├── /principles       ← Superseded principles
+    └── /threads          ← Closed/resolved threads
 ```
 
 ---
@@ -369,5 +379,27 @@ A: Yes! Use **deliberative mode** for exploration, brainstorming, and multi-sess
 
 ## Version
 
-**Current:** 1.0.0
+**Current:** 1.1.0
+**Released:** 2026-01-18
 **License:** MIT
+
+### What's New in 1.1.0
+
+**Deliberative Mode:**
+- Thread tracking for multi-session exploratory work
+- Frame evolution tracking (how understanding changes over time)
+- Auto-generated handoffs for session continuity
+- Graduation from exploration to commitments
+- Heuristic extraction from 5+ threads
+
+**Documentation:**
+- Complete DELIBERATIVE.md operating instructions
+- Updated AGENT.md with Mode Awareness and Thread Lifecycle
+- Enhanced CLAUDE.md with deliberative workflows
+- Updated file structure diagrams across all docs
+
+**Infrastructure:**
+- New `/threads` directory for active deliberative work
+- New `/deliberative` directory for registry and heuristics
+- Thread templates and handoff templates
+- Archive directory for closed threads

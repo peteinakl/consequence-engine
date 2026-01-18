@@ -24,7 +24,8 @@ The Consequence Engine is a self-modifying agent framework for Claude Code CLI t
 
 ```
 /
-├── AGENT.md              ← Core agent instructions (self-modifying, read first)
+├── AGENT.md              ← Core agent instructions (predictive mode)
+├── DELIBERATIVE.md       ← Operating instructions (deliberative mode)
 ├── PRINCIPLES.md         ← Compressed learnings from instances
 ├── TENSIONS.md           ← Unresolved contradictions held as data
 ├── LEDGER.md             ← Open and resolved commitments
@@ -35,8 +36,16 @@ The Consequence Engine is a self-modifying agent framework for Claude Code CLI t
 │   └── {domain}.md       ← Domain-specific indices
 ├── /instances
 │   └── {domain}.json     ← Raw logged instances (JSON)
+├── /threads              ← Active deliberative threads
+│   ├── {thread-id}.md    ← Thread state files
+│   └── {thread-id}/      ← Thread-specific artifacts & handoffs
+├── /deliberative         ← Deliberative metadata
+│   ├── ACTIVE_THREADS.md ← Thread registry
+│   ├── HEURISTICS.md     ← Compressed deliberative patterns
+│   └── FRAMES_LIBRARY.md ← Catalog of useful frames
 └── /archive
-    └── /principles       ← Superseded principles with lineage
+    ├── /principles       ← Superseded principles with lineage
+    └── /threads          ← Closed/resolved threads
 ```
 
 ---
@@ -301,6 +310,18 @@ State these plainly when relevant:
 
 ## Version
 
-**Framework Version:** 1.0.0
-**Initialized:** 2024 (see git log)
+**Framework Version:** 1.1.0
+**Last Updated:** 2026-01-18
 **License:** MIT
+
+### Changelog
+
+**1.1.0** (2026-01-18)
+- Added Deliberative Workflows section
+- Thread creation, handoff generation, and resumption protocols
+- Graduation from deliberative to predictive work
+- Heuristic extraction from threads
+
+**1.0.0** (2026-01-14)
+- Initial release
+- Predictive accountability framework

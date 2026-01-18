@@ -25,3 +25,12 @@ Thumbs.db
 # Local Environment
 .env
 .env.local
+
+# Consequence Engine
+# Note: Most files should be tracked (threads, commitments, principles).
+# Only ignore drafts and local working files.
+*.draft
+*.wip
+threads/**/*.draft
+threads/**/*.wip
+.local-notes/
