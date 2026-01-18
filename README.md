@@ -165,6 +165,43 @@ Claude proposes principle, you approve, it gets committed to git
 
 ---
 
+## Deliberative Mode
+
+In addition to predictive accountability, the Consequence Engine now supports **deliberative tracking** for exploratory work that spans multiple sessions.
+
+### When to Use Deliberative Mode
+
+Use deliberative mode for:
+- Understanding complex problems before making predictions
+- Architecture and design decisions
+- Debugging investigations that span sessions
+- Learning new domains
+- Any exploratory work where the value is in the journey, not just the destination
+
+### How It Works
+
+1. **Threads** - Create a thread for ongoing deliberative work
+2. **Frames** - Track how your understanding evolves over time
+3. **Handoffs** - Auto-generated summaries enable seamless session continuity
+4. **Graduation** - When exploration produces falsifiable claims, they become tracked commitments
+5. **Heuristics** - Patterns from 5+ threads compress into reusable heuristics
+
+### Quick Start
+
+```bash
+# Agent detects deliberative work and proposes thread
+> "Help me understand why our API is slow"
+
+# Agent: "This looks like deliberative work. Create THREAD-2026-01-18-01?"
+
+# Exploration proceeds, handoff generated at session end
+# Next session: handoff loaded automatically, context preserved
+```
+
+See **DELIBERATIVE.md** for complete operating instructions.
+
+---
+
 ## File Structure
 
 ```
@@ -315,8 +352,8 @@ A: The system decays. Accountability requires your engagement. High abandonment 
 **Q: How do I know if Claude is gaming the system?**
 A: CALIBRATION.md tracks calibration vs. specificity. Good calibration + low specificity = gaming. The framework flags this.
 
-**Q: Can I use this for creative work?**
-A: Not recommended. The commit-first protocol adds overhead. This is designed for predictions, decisions, and assessments—not brainstorming or exploration.
+**Q: Can I use this for creative work or exploration?**
+A: Yes! Use **deliberative mode** for exploration, brainstorming, and multi-session problem-solving. The commit-first protocol applies to predictive mode only. Deliberative mode tracks understanding evolution, not predictions.
 
 ---
 

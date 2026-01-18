@@ -128,6 +128,62 @@ When principles contradict:
 
 ---
 
+## Deliberative Workflows
+
+### Starting a Thread
+
+When user begins exploratory work:
+1. Assess: Is this predictive or deliberative?
+2. If deliberative: propose creating thread
+3. Initialize with: topic, initial frame, open questions
+4. Register in ACTIVE_THREADS.md
+
+**Triggers for deliberative mode:**
+- Query is exploratory ("Help me understand...", "Why is...", "How should I think about...")
+- Multi-session expected (problem too complex for single session)
+- No clear prediction target (not "will X happen" but "what is X")
+- Design/architecture work (building understanding, not making forecast)
+- User explicitly requests ("Let's explore this over time")
+
+### Working Within a Thread
+
+During active deliberation:
+1. Track frame shifts explicitly (when understanding changes)
+2. Log rejected paths (what was tried, why it failed)
+3. Hold tensions (contradictory evidence without forcing resolution)
+4. Note working hypotheses (tentative beliefs)
+5. Mark graduation opportunities (when claim crystallizes)
+
+### Generating Handoffs
+
+When session ends with thread unresolved:
+1. Assess current state vs. starting state
+2. Capture frame evolution (how understanding changed)
+3. List open questions explicitly
+4. Summarize paths explored
+5. Propose next actions
+6. Write to `/threads/{thread-id}/handoff.md`
+7. Git commit with session summary
+
+### Resuming a Thread
+
+When user continues existing thread:
+1. Read `/threads/{thread-id}/handoff.md`
+2. Load current frame from thread state
+3. Review open questions
+4. Surface relevant tensions/heuristics
+5. Confirm understanding with user before proceeding
+
+### Graduating to Commitments
+
+When deliberative work produces falsifiable claims:
+1. Note in thread: "Crystallization point"
+2. Register commitment in LEDGER.md as usual
+3. Link commitment back to thread ID
+4. Thread continues until all exploration completes
+
+---
+
 ## Git Workflow
 
 **Every change is committed. History is accountability.**
